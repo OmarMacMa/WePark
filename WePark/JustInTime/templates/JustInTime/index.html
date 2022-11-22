@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WePark - Inicio</title>
+    <link href="css/bootstrap.min_copia.css" rel="stylesheet">
+    <link href="css/nativeStyles.css" rel="stylesheet">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="./img/icon.png" alt="Logo" height="35" class="d-inline-block align-text-top">
+              WePark
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html" style="color:crimson">Inicio</a>
+                <a class="nav-link" href="datosProyecto.html">Acerca del Proyecto</a>
+                <a class="nav-link" href="#">Contacto</a>
+                <div class="dropdown">
+                  <button  id="boton-nav" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Estadística
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="estadistic.html">Por zona</a></li>
+                    <li><a class="dropdown-item" href="estadistic.html">Por horario</a></li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+      </div>
+  </nav> <!-- Termina la barra de navegación  -------------------------- -->
+    <div class="container my-0">
+      <div class="row">
+          <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-2 bg-white">
+              <h2>Estacionamiento en Hora Actual</h2>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" class="mainWindow" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          </div>
+          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+            <iframe src="./Iframe_prueba.html" style="height:41em"></iframe>
+          </div>
+
+      </div>
+  </div>
+
+</body>
+</html>
