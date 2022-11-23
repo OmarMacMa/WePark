@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index">
             <img src={% static "JustInTime/icon.png" %} alt="Logo" height="35" class="d-inline-block align-text-top">
             <!--<img src="./img/icon.png" alt="Logo" height="35" class="d-inline-block align-text-top">-->
               WePark
@@ -25,9 +25,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index" style="color:crimson">Inicio</a>
+                <a class="nav-link" href="datosProyecto">Acerca del Proyecto</a>
                 {% comment %} Falfta revisar para hacerlo en Django 
-                <a class="nav-link" href="index.html" style="color:crimson">Inicio</a>
-                <a class="nav-link" href="datosProyecto.html">Acerca del Proyecto</a>
                 <a class="nav-link" href="#">Contacto</a>
                 {% endcomment %}
                 <div class="dropdown">
@@ -35,8 +35,8 @@
                     Estadística
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="estadistic.html">Por zona</a></li>
-                    <li><a class="dropdown-item" href="estadistic.html">Por horario</a></li>
+                    <li><a class="dropdown-item" href="estadistic">Por zona</a></li>
+                    <li><a class="dropdown-item" href="estadistic">Por horario</a></li>
                   </ul>
                 </div>
               </div>
@@ -51,8 +51,9 @@
 
           </div>
           <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
-            <iframe src="{% url "JustInTime:Iframe" %}" style="height:41em"></iframe>
-            {% comment %} <iframe src="{% url "Iframe_prueba.html" %}" style="height:41em"></iframe> {% endcomment %}
+            {% comment %} <iframe id="Iframe_prueba" style="height:41em" src="{% url "JustInTime:Iframe_prueba" %}"></iframe> {% endcomment %}
+            {% comment %} <iframe id="encoder_iframe" style="height:41em" src="{% url "JustInTime:Iframe_prueba" %}"></iframe> {% endcomment %}
+            <iframe src="{% url "JustInTime:Iframe_prueba" %}" style="height:41em"></iframe>
             {% comment %} <iframe src="{% static "JustInTime/Iframe_prueba.html" %}" style="height:41em"></iframe> {% endcomment %}
             {% comment %} <iframe src="./Iframe_prueba.html" style="height:41em"></iframe> {% endcomment %}
           </div>

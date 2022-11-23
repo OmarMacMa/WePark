@@ -7,7 +7,10 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
     <title>WePark - Proyecto</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link href= "{% static 'JustInTime/bootstrap.min.css' %}" rel="stylesheet">
+{% comment %} <link href="css/bootstrap.min.css" rel="stylesheet"> {% endcomment %}
+  </head>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <style>
@@ -73,16 +76,19 @@
         background-color: #000000;
       }
     </style>
-    <link href="css/carousel.css" rel="stylesheet">
-    <link href="css/nativeStyles.css" rel="stylesheet">
+    {% load static %}
+    <link href="{% static 'JustInTime/carousel.css' %}" rel="stylesheet">
+    {% comment %} <link href="css/carousel.css" rel="stylesheet"> {% endcomment %}
+    <link href="{% static "JustInTime/nativeStyles.css" %}" rel="stylesheet">
+    {% comment %} <link href="css/nativeStyles.css" rel="stylesheet"> {% endcomment %}
   </head>
   <body>
     
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
-            <img src="icon.png" alt="Logo" height="35" class="d-inline-block align-text-top">
+          <a class="navbar-brand" href="index">
+            <img src="{% static "JustInTime/icon.png" %}"alt="Logo" height="35" class="d-inline-block align-text-top">
               WePark
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,16 +96,16 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="index.html" style="color:#FFFFFF">Inicio</a>
-                <a class="nav-link" href="datosProyecto.html" style="color:crimson;">Acerca del Proyecto</a>
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="index" style="color:#FFFFFF">Inicio</a>
+                <a class="nav-link" href="datosProyecto" style="color:crimson;">Acerca del Proyecto</a>
+                {% comment %} <a class="nav-link" href="#">Contacto</a> {% endcomment %}
                 <div class="dropdown">
                   <button  id="boton-nav" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Estadística
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="estadistic.html" style="color:#353535">Por zona</a></li>
-                    <li><a class="dropdown-item" href="estadistic.html" style="color:#353535">Por horario</a></li>
+                    <li><a class="dropdown-item" href="estadistic" style="color:#353535">Por zona</a></li>
+                    <li><a class="dropdown-item" href="estadistic" style="color:#353535">Por horario</a></li>
                   </ul>
                 </div>
               </div>
@@ -117,29 +123,28 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img id="backImg" class="bd-placeholder-img" width="100%" height="100%" src="img/dp_01.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
-
+        <img id="backImg" class="bd-placeholder-img" width="100%" height="100%" src="{% static "JustInTime/dp_01.jpg" %}" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>El futuro de los estacionamientos</h1>
             <p>auxilio qué escribo aquí</p>
-            <p><a class="btn btn-lg btn-primary" href="index.html">Aprende cómo</a></p>
+            <p><a class="btn btn-lg btn-primary" href="">Aprende cómo</a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img id="backImg" class="bd-placeholder-img" width="100%" height="100%" src="img/dp_02.png" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+        <img id="backImg" class="bd-placeholder-img" width="100%" height="100%" src="{% static "JustInTime/dp_02.png" %}" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
 
         <div class="container">
           <div class="carousel-caption">
             <h1>Cuando yo la vi</h1>
             <p>Wujuju</p>
-            <p><a class="btn btn-lg btn-primary" href="estadistic.html">Ir a Estadística</a></p>
+            <p><a class="btn btn-lg btn-primary" href="estadistic">Ir a Estadística</a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img id="backImg" class="bd-placeholder-img" width="100%" height="100%" src="img/dp_03.png" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+        <img id="backImg" class="bd-placeholder-img" width="100%" height="100%" src="{% static "JustInTime/dp_03.png" %}" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
 
         <div class="container">
           <div class="carousel-caption text-end">
@@ -203,7 +208,7 @@
       <center><a href="#"><img src="img/anuncio.png" alt="Anuncio" style="width:30%;"></a></center>
     </div> 
 
-    <!-- Datos -------------------------- - - -- - - -- - --->
+    <!-- Datos -->
 
     <hr class="featurette-divider">
 
