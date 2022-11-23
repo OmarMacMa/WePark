@@ -55,7 +55,7 @@ ROOT_URLCONF = 'WePark.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["/home/omarmacma/Clases/IoT/WeParkProject/WePark/JustInTime/templates/JustInTime"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

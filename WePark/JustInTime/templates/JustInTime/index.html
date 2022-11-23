@@ -51,9 +51,11 @@
 
           </div>
           <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+            {% include "Iframe_prueba.html" %}
+
             {% comment %} <iframe id="Iframe_prueba" style="height:41em" src="{% url "JustInTime:Iframe_prueba" %}"></iframe> {% endcomment %}
             {% comment %} <iframe id="encoder_iframe" style="height:41em" src="{% url "JustInTime:Iframe_prueba" %}"></iframe> {% endcomment %}
-            <iframe src="{% url "JustInTime:Iframe_prueba" %}" style="height:41em"></iframe>
+            {% comment %} <iframe src="{% url "JustInTime:Iframe_prueba" %}" style="height:41em"></iframe> {% endcomment %}
             {% comment %} <iframe src="{% static "JustInTime/Iframe_prueba.html" %}" style="height:41em"></iframe> {% endcomment %}
             {% comment %} <iframe src="./Iframe_prueba.html" style="height:41em"></iframe> {% endcomment %}
           </div>

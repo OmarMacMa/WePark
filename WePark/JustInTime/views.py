@@ -6,6 +6,7 @@ def index(request):
 
 
 def Iframe_prueba(request):
+    # Puede hacerse el ánalisis y lectura de datos aquí
     return render(request, 'JustInTime/Iframe_prueba.html')
 
 

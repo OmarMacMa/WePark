@@ -4,33 +4,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WePark - Estadística</title>
-    <link href="css/bootstrap.min_copia.css" rel="stylesheet">
-    <link href="css/nativeStyles.css" rel="stylesheet">
+    {% load static %}
+    <link href="{% static 'JustInTime/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'JustInTime/nativeStyles.css' %}" rel="stylesheet">
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-              <img src="icon.png" alt="Logo" height="35" class="d-inline-block align-text-top">
-                WePark
+            <a class="navbar-brand" href="index">
+                <img src={% static "JustInTime/icon.png" %} alt="Logo" height="35" class="d-inline-block align-text-top">
+                    WePark
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                  <a class="nav-link" href="index.html" style="color:#FFFFFF">Inicio</a>
-                  <a class="nav-link" href="datosProyecto.html">Acerca del Proyecto</a>
-                  <a class="nav-link" href="#">Contacto</a>
+                  <a class="nav-link" href="index" style="color:#FFFFFF">Inicio</a>
+                  <a class="nav-link" href="datosProyecto">Acerca del Proyecto</a>
+                  {% comment %} <a class="nav-link" href="#">Contacto</a> {% endcomment %}
                   <div class="dropdown">
                     <button  id="boton-nav" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:crimson">
                       Estadística
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="estadistic.html">Por zona</a></li>
-                      <li><a class="dropdown-item" href="estadistic.html">Por horario</a></li>
+                      <li><a class="dropdown-item" href="estadistic">Por zona</a></li>
+                      <li><a class="dropdown-item" href="estadistic">Por horario</a></li>
                     </ul>
                   </div>
                 </div>
@@ -47,13 +48,14 @@
   <div class="container my-3">
     <div class="row">
         <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
-            <!--h2>Zona Cubierta</h2-->
+            <h2>Zona Cubierta</h2>
             <table class="table table-dark table-striped">
+                {% comment %} Color por cada fila dependiendo de el cupo {% endcomment %}
                 <thead>
                     <tr>
-                        <th class="centrado">Hora</th>
-                        <th class="centrado">Lugares ocupados</th>
-                        <th class="centrado">Lugares libres</th>
+                        <th class="text-center">Hora</th>
+                        <th class="text-center">Lugares ocupados</th>
+                        <th class="text-center">Lugares libres</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -142,17 +144,12 @@
                         <td class="centrado">0</td>
                         <td class="centrado">100</td>
                     </tr> 
-                    <tr>
-                        <td class="centrado">22:00</td>
-                        <td class="centrado">0</td>
-                        <td class="centrado">100</td>
-                    </tr>                         
                 </tbody>
             </table>
         </div>
         <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-            <h2>Zona Cubierta</h2>
-            <!--form>
+            <!--h2>Zona Cubierta</h2>
+            <form>
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Lenguaje</label>
                     <input type="text" class="form-control" id="nombre" placeholder="Lenguaje" autofocus />
