@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WePark - Inicio</title>
-    <link href="css/bootstrap.min_copia.css" rel="stylesheet">
-    <link href="css/nativeStyles.css" rel="stylesheet">
+    {% load static %}
+    <link href= "{% static 'JustInTime/bootstrap.min.css' %}" rel="stylesheet">
+    <link href= "{% static 'JustInTime/nativeStyles.css' %}" rel="stylesheet">
+    <!--<link href="../css/bootstrap.min_copia.css" rel="stylesheet">
+    <link href="../css/nativeStyles.css" rel="stylesheet">-->
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -13,7 +16,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
           <a class="navbar-brand" href="index.html">
-            <img src="./img/icon.png" alt="Logo" height="35" class="d-inline-block align-text-top">
+            <img src={% static "JustInTime/icon.png" %} alt="Logo" height="35" class="d-inline-block align-text-top">
+            <!--<img src="./img/icon.png" alt="Logo" height="35" class="d-inline-block align-text-top">-->
               WePark
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,9 +25,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ms-auto">
+                {% comment %} Falfta revisar para hacerlo en Django 
                 <a class="nav-link" href="index.html" style="color:crimson">Inicio</a>
                 <a class="nav-link" href="datosProyecto.html">Acerca del Proyecto</a>
                 <a class="nav-link" href="#">Contacto</a>
+                {% endcomment %}
                 <div class="dropdown">
                   <button  id="boton-nav" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Estadística
@@ -45,7 +51,10 @@
 
           </div>
           <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
-            <iframe src="./Iframe_prueba.html" style="height:41em"></iframe>
+            <iframe src="{% url "JustInTime:Iframe" %}" style="height:41em"></iframe>
+            {% comment %} <iframe src="{% url "Iframe_prueba.html" %}" style="height:41em"></iframe> {% endcomment %}
+            {% comment %} <iframe src="{% static "JustInTime/Iframe_prueba.html" %}" style="height:41em"></iframe> {% endcomment %}
+            {% comment %} <iframe src="./Iframe_prueba.html" style="height:41em"></iframe> {% endcomment %}
           </div>
 
       </div>

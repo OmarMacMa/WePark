@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WePark - Estadística</title>
+    <link href="css/bootstrap.min_copia.css" rel="stylesheet">
+    <link href="css/nativeStyles.css" rel="stylesheet">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img src="icon.png" alt="Logo" height="35" class="d-inline-block align-text-top">
+                WePark
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                  <a class="nav-link" href="index.html" style="color:#FFFFFF">Inicio</a>
+                  <a class="nav-link" href="datosProyecto.html">Acerca del Proyecto</a>
+                  <a class="nav-link" href="#">Contacto</a>
+                  <div class="dropdown">
+                    <button  id="boton-nav" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:crimson">
+                      Estadística
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="estadistic.html">Por zona</a></li>
+                      <li><a class="dropdown-item" href="estadistic.html">Por horario</a></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </nav> <!-- Termina la barra de navegación  -------------------------- -->
+  <div class="container">
+    <br>
+    <h1>Estadística</h1>
+    <p>Aquí se muestran diferentes mapas según la hora y el lugar del estacionamiento</p>
+    <p>En este apartado los datos se ordenan por zona. La primera, "zona cubierta", se refiere a la que están nuestros sensores</p>
+  
+  </div>
+  <div class="container my-3">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+            <!--h2>Zona Cubierta</h2-->
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th class="centrado">Hora</th>
+                        <th class="centrado">Lugares ocupados</th>
+                        <th class="centrado">Lugares libres</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="centrado">5:00</td>
+                        <td class="centrado">0</td>
+                        <td class="centrado">100</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">6:00</td>
+                        <td class="centrado">20</td>
+                        <td class="centrado">80</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">7:00</td>
+                        <td class="centrado">70</td>
+                        <td class="centrado">30</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">8:00</td>
+                        <td class="centrado">0</td>
+                        <td class="centrado">100</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">9:00</td>
+                        <td class="centrado">0</td>
+                        <td class="centrado">100</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">10:00</td>
+                        <td class="centrado">20</td>
+                        <td class="centrado">80</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">11:00</td>
+                        <td class="centrado">70</td>
+                        <td class="centrado">30</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">12:00</td>
+                        <td class="centrado">0</td>
+                        <td class="centrado">100</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">13:00</td>
+                        <td class="centrado">0</td>
+                        <td class="centrado">100</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">14:00</td>
+                        <td class="centrado">20</td>
+                        <td class="centrado">80</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">15:00</td>
+                        <td class="centrado">70</td>
+                        <td class="centrado">30</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">16:00</td>
+                        <td class="centrado">0</td>
+                        <td class="centrado">100</td>
+                    </tr> 
+                    <tr>
+                        <td class="centrado">17:00</td>
+                        <td class="centrado">0</td>
+                        <td class="centrado">100</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">18:00</td>
+                        <td class="centrado">20</td>
+                        <td class="centrado">80</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">19:00</td>
+                        <td class="centrado">70</td>
+                        <td class="centrado">30</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">20:00</td>
+                        <td class="centrado">0</td>
+                        <td class="centrado">100</td>
+                    </tr>       
+                    <tr>
+                        <td class="centrado">21:00</td>
+                        <td class="centrado">0</td>
+                        <td class="centrado">100</td>
+                    </tr> 
+                    <tr>
+                        <td class="centrado">22:00</td>
+                        <td class="centrado">0</td>
+                        <td class="centrado">100</td>
+                    </tr>                         
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+            <h2>Zona Cubierta</h2>
+            <!--form>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Lenguaje</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Lenguaje" autofocus />
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="descripcion" placeholder="Descripción del lenguaje" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="programadores" class="form-label">Número de Programadores</label>
+                    <input type="number" class="form-control" id="programadores" />
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-success">Guardar</button>
+                    <button class="btn btn-secondary">Limpiar</button>
+                </div>
+            </form-->
+        </div>
+    </div>
+</div>
+</body>
+</html>
