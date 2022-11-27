@@ -14,24 +14,25 @@ class DeviceState(models.Model):
         return s
 
 
-class DeviceHistoric(models.Model):
-    id_device = models.ForeignKey(DeviceState, related_name="state_historic", on_delete=models.CASCADE)
-    arrive_leave = models.BooleanField(default=False)
-    fecha = models.DateTimeField(default=timezone.now)
-
-    def __str__(self):
-        s = "Device ID: " + str(self.id_device) + \
-            " Arrive/Leave: " + str(self.arrive_leave) + \
-            " Fecha: " + str(self.fecha)
-        return s
-    
-
 class SegmentState(models.Model):
-    # parking_segment of DeviceState
-    parking_segment = models.ForeignKey(DeviceState, related_name="state_segment", on_delete=models.CASCADE)
+    parking_segment = models.CharField(max_length=1, primary_key=True)
     occupied = models.FloatField(default=0.0)   # Percentage of occupied slots
 
     def __str__(self):
         s = "Parking Segment: " + str(self.parking_segment) + \
             " Occupied: " + str(self.occupied) + "%"
+        return s
+
+
+class DeviceHistoric(models.Model):
+    id_device = models.IntegerField()
+    # id_device = models.ForeignKey(DeviceState, related_name="state_historic", on_delete=models.CASCADE)
+    arrive_leave = models.BooleanField(default=False)
+    hour_date = models.DateTimeField(default=timezone.now)
+    # Check the way to keep track of the occupied percentage of each segment in the DeviceHistoric table
+
+    def __str__(self):
+        s = "Device ID: " + str(self.id_device) + \
+            " Arrive/Leave: " + str(self.arrive_leave) + \
+            " Hour/Date: " + str(self.hour_date)
         return s

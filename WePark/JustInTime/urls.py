@@ -10,6 +10,8 @@ urlpatterns = [
     path("datosProyecto", views.datosProyecto, name="datosProyecto"),
     path("estadistic", views.estadistic, name="estadistic"),
     path("Iframe_prueba", TemplateView.as_view(template_name="JustInTime/Iframe_prueba.html"), name="Iframe_prueba"),
+    path("record/<int:id_device>/<int:slot_state>", views.record, name="record"),
+    # path("record/<int:id_device>/<int:slot_state>/<str:parking_segment>", views.record, name="record"),
     #path(r"^Iframe_prueba/", TemplateView.as_view(template_name="JustInTime/Iframe_prueba.html"), name="Iframe_prueba"),
 ]
 
