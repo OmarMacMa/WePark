@@ -26,10 +26,9 @@ class SegmentState(models.Model):
 
 class DeviceHistoric(models.Model):
     id_device = models.IntegerField()
-    # id_device = models.ForeignKey(DeviceState, related_name="state_historic", on_delete=models.CASCADE)
     arrive_leave = models.BooleanField(default=False)
     hour_date = models.DateTimeField(default=timezone.now)
-    # Check the way to keep track of the occupied percentage of each segment in the DeviceHistoric table
+    #parking_segment = models.CharField(max_length=1)
 
     def __str__(self):
         s = "Device ID: " + str(self.id_device) + \

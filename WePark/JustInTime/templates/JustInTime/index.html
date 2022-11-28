@@ -59,7 +59,7 @@
                   } else if (val >= 20){
                     return "#008000";
                   } else {
-                    return "#00000F";
+                    return "#000000";
                   }
                 }
                 function initMap(){
@@ -106,13 +106,23 @@
                     }
                     new google.maps.Circle({
                       strokeColor: color,
-                      strokeOpacity: 0.8,
+                      strokeOpacity: 0.99,
                       strokeWeight: 2,
                       fillColor: color,
                       fillOpacity: 0.35,
                       map,
                       center: locations[i],
                       radius: 50,
+
+                    });
+                    var marker = new google.maps.Marker({
+                      position: locations[i],
+                      label: segments[i],
+                      map: map,
+                      icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        scale: 0,
+                      },                      
                     });
                   }
                 }
@@ -120,7 +130,6 @@
               </script>
               
               <script type="text/javascript"
-              {% comment %} Should pass the key from Django in a secure way {% endcomment %}
                 src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_MAPS_API_KEY}}&callback=initMap">
                 defer
                 ></script>
