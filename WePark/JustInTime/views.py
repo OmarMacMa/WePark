@@ -42,7 +42,7 @@ def estadistic(request):
     return render(request, 'JustInTime/estadistic.html')
 
 
-def record(request, id_device, slot_state):
+def record(request, id_device, slot_state, parking_segment):
     # Aqui se hace el guardado de los datos en la base de datos
 
     if slot_state == 1:
@@ -50,11 +50,13 @@ def record(request, id_device, slot_state):
     else:
         slot_state = False
     parking_segment = DeviceState.objects.get(id_device=id_device).parking_segment
+    # DeviceState.objects.create(id_device=id_device, slot_state=slot_state, parking_segment=parking_segment)
     device, created = DeviceState.objects.get_or_create(id_device=id_device)
     device.slot_state = slot_state
     device.parking_segment = parking_segment
     device.save()
-    DeviceHistoric.objects.create(id_device=id_device, arrive_leave=slot_state, hour_date=timezone.now())
+    DeviceHistoric.objects.create(id_device=id_device, arrive_leave=slot_state, hour_date=timezone.now(), parking_segment=parking_segment)
+    # SegmentState.objects.create(parking_segment=parking_segment, occupied=0.0)
     total = DeviceState.objects.filter(parking_segment=parking_segment).count()
     active = DeviceState.objects.filter(
         parking_segment=parking_segment, slot_state=True).count()

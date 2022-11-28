@@ -25,10 +25,10 @@ class SegmentState(models.Model):
 
 
 class DeviceHistoric(models.Model):
-    id_device = models.IntegerField()
+    id_device = models.IntegerField(primary_key=True)
     arrive_leave = models.BooleanField(default=False)
     hour_date = models.DateTimeField(default=timezone.now)
-    #parking_segment = models.CharField(max_length=1)
+    parking_segment = models.CharField(max_length=1, default="A")
 
     def __str__(self):
         s = "Device ID: " + str(self.id_device) + \
