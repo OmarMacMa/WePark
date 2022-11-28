@@ -8,46 +8,123 @@
     <link href= "{% static 'JustInTime/bootstrap.min.css' %}" rel="stylesheet">
     <link href= "{% static 'JustInTime/nativeStyles.css' %}" rel="stylesheet">
     <!--<link href="../css/bootstrap.min_copia.css" rel="stylesheet">
-    <link href="../css/nativeStyles.css" rel="stylesheet">-->
-  </head>
-  <body>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
+      <link href="../css/nativeStyles.css" rel="stylesheet">-->
+    </head>
+    <body>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
           <a class="navbar-brand" href="index">
             <img src={% static "JustInTime/icon.png" %} alt="Logo" height="35" class="d-inline-block align-text-top">
             <!--<img src="./img/icon.png" alt="Logo" height="35" class="d-inline-block align-text-top">-->
-              WePark
+            WePark
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="index" style="color:crimson">Inicio</a>
-                <a class="nav-link" href="datosProyecto">Acerca del Proyecto</a>
-                {% comment %} Falfta revisar para hacerlo en Django 
-                <a class="nav-link" href="#">Contacto</a>
-                {% endcomment %}
-                <div class="dropdown">
-                  <button  id="boton-nav" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Estadística
-                  </button>
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="index" style="color:crimson">Inicio</a>
+              <a class="nav-link" href="datosProyecto">Acerca del Proyecto</a>
+              {% comment %} Falfta revisar para hacerlo en Django 
+              <a class="nav-link" href="#">Contacto</a>
+              {% endcomment %}
+              <div class="dropdown">
+                <button  id="boton-nav" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Estadística
+                </button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="estadistic">Por zona</a></li>
                     <li><a class="dropdown-item" href="estadistic">Por horario</a></li>
                   </ul>
                 </div>
               </div>
+            </div>
           </div>
-      </div>
-  </nav> <!-- Termina la barra de navegación  -------------------------- -->
-    <div class="container my-0">
-      <div class="row">
-          <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-2 bg-white">  
+        </nav> <!-- Termina la barra de navegación  -------------------------- -->
+        <div class="container my-0">
+          <div class="row">
+            <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-2 bg-white">  
               <h2>Estacionamiento en Hora Actual</h2>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3322.065438781182!2d-103.45598971916823!3d20.734744155662465!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe1d6cf5145e12c71!2sTerraza%20BiblioTeca%20Gdl!5e1!3m2!1ses!2smx!4v1669243518652!5m2!1ses!2smx" class="mainWindow" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <div id="map" style="height: 600px; width: 100%;"></div>
+              <script type="text/javascript">
+                function ifer(val){
+                  if (val >= 80){
+                    return "#FF0000";
+                  } else if (val >= 60){
+                    return "#FFA500";
+                  } else if (val >= 40){
+                    return "#FFFF00";
+                  } else if (val >= 20){
+                    return "#008000";
+                  } else {
+                    return "#00000F";
+                  }
+                }
+                function initMap(){
+                  const myLatLng = { lat: 20.7348, lng: -103.4553 };
+                  const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 17,
+                    center: myLatLng,
+                    disableDefaultUI: true,
+                    mapTypeId: 'satellite',
+                  });
+                  const locations = [
+                    { lat: 20.736839, lng: -103.453601 }, // A
+                    { lat: 20.735695, lng: -103.453763 },  // B
+                    { lat: 20.734593, lng: -103.453895 },  // C
+                    { lat: 20.733129, lng: -103.45408 },  // D
+                    { lat: 20.736219, lng: -103.452694 },  // E
+                    { lat: 20.73299, lng: -103.453227 },  // F
+                    { lat: 20.732396, lng: -103.455161 },  // G
+                    { lat: 20.732516, lng: -103.456663 },  // H
+                    { lat: 20.733339, lng: -103.457586 },  // I
+                  ]
+                  const segments = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+                  for (let i = 0; i < locations.length; i++){
+                    if (segments[i] == "A"){
+                      var color = ifer({{percentage_A}});
+                    } else if (segments[i] == "B"){
+                      var color = ifer({{percentage_B}});
+                    } else if (segments[i] == "C"){
+                      var color = ifer({{percentage_C}});
+                    } else if (segments[i] == "D"){
+                      var color = ifer({{percentage_D}});
+                    } else if (segments[i] == "E"){
+                      var color = ifer({{percentage_E}});
+                    } else if (segments[i] == "F"){
+                      var color = ifer({{percentage_F}});
+                    } else if (segments[i] == "G"){
+                      var color = ifer({{percentage_G}});
+                    } else if (segments[i] == "H"){
+                      var color = ifer({{percentage_H}});
+                    } else if (segments[i] == "I"){
+                      var color = ifer({{percentage_I}});
+                    } else {
+                      var color = "#000000";
+                    }
+                    new google.maps.Circle({
+                      strokeColor: color,
+                      strokeOpacity: 0.8,
+                      strokeWeight: 2,
+                      fillColor: color,
+                      fillOpacity: 0.35,
+                      map,
+                      center: locations[i],
+                      radius: 50,
+                    });
+                  }
+                }
+              window.initMap = initMap;
+              </script>
+              
+              <script type="text/javascript"
+              {% comment %} Should pass the key from Django in a secure way {% endcomment %}
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1c_muHQ7TnS89t1vnYbZOZg2A9ds28r0&callback=initMap"
+                defer
+                ></script>
+              {% comment %} <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3322.065438781182!2d-103.45598971916823!3d20.734744155662465!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe1d6cf5145e12c71!2sTerraza%20BiblioTeca%20Gdl!5e1!3m2!1ses!2smx!4v1669243518652!5m2!1ses!2smx" class="mainWindow" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> {% endcomment %}
               {% comment %} <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" class="mainWindow" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> {% endcomment %}
           </div>
 
@@ -115,5 +192,7 @@
       </div>
   </div>
 
+
+  
 </body>
 </html>

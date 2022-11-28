@@ -11,6 +11,35 @@
     <link href="../css/nativeStyles.css" rel="stylesheet">-->
   </head>
   <body>
+    {% comment %} Set a div map with height=400px width=100% {% endcomment %}
+    <div id="map" style="height: 400px; width: 100%;"></div>
+    {% comment %} <div id="map"></div> {% endcomment %}
+  <script type="text/javascript">
+    function initMap(){
+      const myLatLng = { lat: 20.735, lng: -103.456 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 16,
+        center: myLatLng,
+      });
+      new google.maps.Circle({
+        strokeColor: "#FF0000",
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: "#FF0000",
+        fillOpacity: 0.35,
+        map,
+        center: myLatLng,
+        radius: 100,
+      });
+    }
+  window.initMap = initMap;
+  </script>
+
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1c_muHQ7TnS89t1vnYbZOZg2A9ds28r0&callback=initMap"
+    defer
+    ></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 
