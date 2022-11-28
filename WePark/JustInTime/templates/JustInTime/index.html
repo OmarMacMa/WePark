@@ -45,20 +45,71 @@
   </nav> <!-- Termina la barra de navegación  -------------------------- -->
     <div class="container my-0">
       <div class="row">
-          <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-2 bg-white">
+          <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-2 bg-white">  
               <h2>Estacionamiento en Hora Actual</h2>
               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3322.065438781182!2d-103.45598971916823!3d20.734744155662465!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe1d6cf5145e12c71!2sTerraza%20BiblioTeca%20Gdl!5e1!3m2!1ses!2smx!4v1669243518652!5m2!1ses!2smx" class="mainWindow" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               {% comment %} <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" class="mainWindow" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> {% endcomment %}
-
           </div>
-          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
-            {% include "Iframe_prueba.html" %}
 
-            {% comment %} <iframe id="Iframe_prueba" style="height:41em" src="{% url "JustInTime:Iframe_prueba" %}"></iframe> {% endcomment %}
-            {% comment %} <iframe id="encoder_iframe" style="height:41em" src="{% url "JustInTime:Iframe_prueba" %}"></iframe> {% endcomment %}
-            {% comment %} <iframe src="{% url "JustInTime:Iframe_prueba" %}" style="height:41em"></iframe> {% endcomment %}
-            {% comment %} <iframe src="{% static "JustInTime/Iframe_prueba.html" %}" style="height:41em"></iframe> {% endcomment %}
-            {% comment %} <iframe src="./Iframe_prueba.html" style="height:41em"></iframe> {% endcomment %}
+
+          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+            <div class="row">
+              <!-- A class with a 3 separation on the top -->
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 py-3 my-4 mx-0 bg-white">
+                  {% comment %} Green and gray table {% endcomment %}
+                  <table class="table table-dark table-striped table-hover table-bordered">
+                  {% comment %} <table class="table table-dark table-striped"> {% endcomment %}
+                      <thead>
+                          <tr>
+                              <th class="centrado">Área</th>
+                              <th class="centrado">Porcentaje ocupado</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td class="centrado">A</td>
+                              <td class="centrado">{{ percentage_A }}%</td>
+                          </tr>
+                          <tr>
+                              <td class="centrado">B</td>
+                              <td class="centrado">{{ percentage_B }}%</td>
+                          </tr>
+                          <tr>
+                              <td class="centrado">C</td>
+                              <td class="centrado">{{ percentage_C }}%</td>
+                          </tr>
+                          <tr>
+                              <td class="centrado">D</td>
+                              <td class="centrado">{{ percentage_D }}%</td>
+                          </tr>
+                          <tr>
+                              <td class="centrado">E</td>
+                              <td class="centrado">{{ percentage_E }}%</td>
+                          </tr>
+                          <tr>
+                              <td class="centrado">F</td>
+                              <td class="centrado">{{ percentage_F }}%</td>
+                          </tr>
+                          <tr>
+                              <td class="centrado">G</td>
+                              <td class="centrado">{{ percentage_G }}%</td>
+                          </tr>
+                          <tr>
+                              <td class="centrado">H</td>
+                              <td class="centrado">{{ percentage_H }}%</td>
+                          </tr>
+                          <tr>
+                              <td class="centrado">I</td>
+                              <td class="centrado">{{ percentage_I }}%</td>
+                          </tr>
+                          </tr>                         
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+  
+        {% comment %} {% include "Iframe_prueba.html" %} {% endcomment %}
+
           </div>
 
       </div>

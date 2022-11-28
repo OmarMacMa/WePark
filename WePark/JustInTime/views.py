@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.utils import timezone
 from django.http import HttpResponse
@@ -6,23 +6,16 @@ from .models import DeviceState, SegmentState, DeviceHistoric
 
 
 def index(request):
-    return render(request, 'JustInTime/index.html')
-
-
-def Iframe_prueba(request):
-    # Puede hacerse el ánalisis y lectura de datos aquí
-    query = SegmentState.objects.get(parking_segment="A")
-    percentage_A = SegmentState.objects.get(parking_segment="A").occupied
-    percentage_B = SegmentState.objects.get(parking_segment="B").occupied
-    percentage_C = SegmentState.objects.get(parking_segment="C").occupied
-    percentage_D = SegmentState.objects.get(parking_segment="D").occupied
-    percentage_E = SegmentState.objects.get(parking_segment="E").occupied
-    percentage_F = SegmentState.objects.get(parking_segment="F").occupied
-    percentage_G = SegmentState.objects.get(parking_segment="G").occupied
-    percentage_H = SegmentState.objects.get(parking_segment="H").occupied
-    percentage_I = SegmentState.objects.get(parking_segment="I").occupied
-    return render(request, 'JustInTime/Iframe_prueba.html', {
-        'query': query,
+    percentage_A = SegmentState.objects.get(pk="A").occupied
+    percentage_B = SegmentState.objects.get(pk="B").occupied
+    percentage_C = SegmentState.objects.get(pk="C").occupied
+    percentage_D = SegmentState.objects.get(pk="D").occupied
+    percentage_E = SegmentState.objects.get(pk="E").occupied
+    percentage_F = SegmentState.objects.get(pk="F").occupied
+    percentage_G = SegmentState.objects.get(pk="G").occupied
+    percentage_H = SegmentState.objects.get(pk="H").occupied
+    percentage_I = SegmentState.objects.get(pk="I").occupied
+    return render(request, 'JustInTime/index.html', {
         'percentage_A': percentage_A,
         'percentage_B': percentage_B,
         'percentage_C': percentage_C,
@@ -33,6 +26,10 @@ def Iframe_prueba(request):
         'percentage_H': percentage_H,
         'percentage_I': percentage_I,
     })
+
+
+def Iframe_prueba(request):
+    return render(request, 'JustInTime/Iframe_prueba.html')
 
 
 def datosProyecto(request):
