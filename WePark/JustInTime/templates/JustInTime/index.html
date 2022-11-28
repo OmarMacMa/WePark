@@ -121,7 +121,7 @@
               
               <script type="text/javascript"
               {% comment %} Should pass the key from Django in a secure way {% endcomment %}
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1c_muHQ7TnS89t1vnYbZOZg2A9ds28r0&callback=initMap"
+                src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_MAPS_API_KEY}}&callback=initMap">
                 defer
                 ></script>
               {% comment %} <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3322.065438781182!2d-103.45598971916823!3d20.734744155662465!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe1d6cf5145e12c71!2sTerraza%20BiblioTeca%20Gdl!5e1!3m2!1ses!2smx!4v1669243518652!5m2!1ses!2smx" class="mainWindow" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> {% endcomment %}
