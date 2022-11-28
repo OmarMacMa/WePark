@@ -3,6 +3,7 @@ from django.views import generic
 from django.utils import timezone
 from django.http import HttpResponse
 from .models import DeviceState, SegmentState, DeviceHistoric
+from django.conf import settings
 
 
 def index(request):
@@ -25,6 +26,7 @@ def index(request):
         'percentage_G': percentage_G,
         'percentage_H': percentage_H,
         'percentage_I': percentage_I,
+        "GOOGLE_MAPS_API_KEY": settings.GOOGLE_MAPS_API_KEY,
     })
 
 
