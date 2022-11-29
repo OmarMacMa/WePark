@@ -25,7 +25,8 @@ class SegmentState(models.Model):
 
 
 class DeviceHistoric(models.Model):
-    id_device = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True, default=None)
+    id_device = models.IntegerField(default=100)
     arrive_leave = models.BooleanField(default=False)
     hour_date = models.DateTimeField(default=timezone.now)
     parking_segment = models.CharField(max_length=1, default="A")

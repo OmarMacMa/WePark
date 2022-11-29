@@ -25,7 +25,7 @@ SECRET_KEY = keys.SECRET_KEY
 GOOGLE_MAPS_API_KEY = keys.GOOGLE_MAPS_API_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["wepark.azurewebsites.net", "localhost", "127.0.0.1"]
 
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'WePark.urls'
@@ -78,10 +78,21 @@ WSGI_APPLICATION = 'WePark.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': { # Connected to a SQL Server database in Google Cloud
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "weparkdb",
+        "USER": "omarmacma@we-park-db",
+        "PASSWORD": keys.DB_PASSWORD,
+        "HOST": keys.DB_HOST,
+        "PORT": "5432",
+        "OPTIONS": {
+            "sslmode": "require",
+        },
     }
+    # 'default': { # Connected to a SQL Server database in Google Cloud
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 
