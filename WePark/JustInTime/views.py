@@ -50,17 +50,20 @@ def record(request, id_device, slot_state):
     else:
         slot_state = False
     # Falta un if para ver si el estado actual es igual al anterior
-    parking_segment = DeviceState.objects.get(id_device=id_device).parking_segment
-    device, created = DeviceState.objects.get_or_create(id_device=id_device)
-    device.slot_state = slot_state
-    device.parking_segment = parking_segment
-    device.save()
-    DeviceHistoric.objects.create(id_device=id_device, arrive_leave=slot_state, hour_date=timezone.now(), parking_segment=parking_segment)
-    total = DeviceState.objects.filter(parking_segment=parking_segment).count()
-    active = DeviceState.objects.filter(
-        parking_segment=parking_segment, slot_state=True).count()
-    segment, created = SegmentState.objects.get_or_create(
-        parking_segment=parking_segment)
-    segment.occupied = active/total*100
-    segment.save()
-    return HttpResponse("OK")
+    if DeviceState.objects.get(pk=id_device).state != slot_state:
+        parking_segment = DeviceState.objects.get(id_device=id_device).parking_segment
+        device, created = DeviceState.objects.get_or_create(id_device=id_device)
+        device.slot_state = slot_state
+        device.parking_segment = parking_segment
+        device.save()
+        DeviceHistoric.objects.create(id_device=id_device, arrive_leave=slot_state, hour_date=timezone.now(), parking_segment=parking_segment)
+        total = DeviceState.objects.filter(parking_segment=parking_segment).count()
+        active = DeviceState.objects.filter(
+            parking_segment=parking_segment, slot_state=True).count()
+        segment, created = SegmentState.objects.get_or_create(
+            parking_segment=parking_segment)
+        segment.occupied = active/total*100
+        segment.save()
+        return HttpResponse("OK")
+    else:
+        return HttpResponse("Same state")
