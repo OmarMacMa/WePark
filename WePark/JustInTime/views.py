@@ -50,7 +50,7 @@ def record(request, id_device, slot_state):
     else:
         slot_state = False
     # Falta un if para ver si el estado actual es igual al anterior
-    if DeviceState.objects.get(pk=id_device).state != slot_state:
+    if DeviceState.objects.get(pk=id_device).slot_state != slot_state:
         parking_segment = DeviceState.objects.get(id_device=id_device).parking_segment
         device, created = DeviceState.objects.get_or_create(id_device=id_device)
         device.slot_state = slot_state

@@ -27,7 +27,7 @@ GOOGLE_MAPS_API_KEY = keys.GOOGLE_MAPS_API_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["wepark.azurewebsites.net", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["wepark.azurewebsites.net", "localhost", "127.0.0.1", "ec2-54-167-62-67.compute-1.amazonaws.com", "wepark.azurewebsites.net:8000"]
 
 
 # Application definition
