@@ -10,8 +10,8 @@ import datetime
 parks = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
 amounts = [DeviceState.objects.filter(parking_segment=park).count() for park in parks]
 amounts.append(DeviceState.objects.all().count())
-amount_historic = DeviceHistoric.objects.all().count()
 # mega_dict
+amount_historic = DeviceHistoric.objects.filter(arrive_leave=True).count()
 five = {}
 six = {}
 seven = {}
