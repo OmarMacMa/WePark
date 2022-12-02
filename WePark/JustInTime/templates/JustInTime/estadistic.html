@@ -8,8 +8,8 @@
     <link href="{% static "JustInTime/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "JustInTime/nativeStyles.css" %}" rel="stylesheet">
     <style>
-        table{
-            background-color: #212529;
+        .table-dark{
+            --bs-table-bg: #212529;
         }
     </style>
   </head>
@@ -74,75 +74,75 @@
                     <tbody>
                         <tr>
                             <td class="centrado">5:00</td>
-                            <td class="centrado">{{ total_5 }}</td>
+                            <td class="centrado">{{ total_5 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">6:00</td>
-                            <td class="centrado">{{ total_6 }}</td>
+                            <td class="centrado">{{ total_6 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">7:00</td>
-                            <td class="centrado">{{ total_7 }}</td>
+                            <td class="centrado">{{ total_7 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">8:00</td>
-                            <td class="centrado">{{ total_8 }}</td>
+                            <td class="centrado">{{ total_8 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">9:00</td>
-                            <td class="centrado">{{ total_9 }}</td>
+                            <td class="centrado">{{ total_9 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">10:00</td>
-                            <td class="centrado">{{ total_10 }}</td>
+                            <td class="centrado">{{ total_10 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">11:00</td>
-                            <td class="centrado">{{ total_11 }}</td>
+                            <td class="centrado">{{ total_11 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">12:00</td>
-                            <td class="centrado">{{ total_12 }}</td>
+                            <td class="centrado">{{ total_12 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">13:00</td>
-                            <td class="centrado">{{ total_13 }}</td>
+                            <td class="centrado">{{ total_13 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">14:00</td>
-                            <td class="centrado">{{ total_14 }}</td>
+                            <td class="centrado">{{ total_14 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">15:00</td>
-                            <td class="centrado">{{ total_15 }}</td>
+                            <td class="centrado">{{ total_15 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">16:00</td>
-                            <td class="centrado">{{ total_16 }}</td>
+                            <td class="centrado">{{ total_16 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">17:00</td>
-                            <td class="centrado">{{ total_17 }}</td>
+                            <td class="centrado">{{ total_17 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">18:00</td>
-                            <td class="centrado">{{ total_18 }}</td>
+                            <td class="centrado">{{ total_18 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">19:00</td>
-                            <td class="centrado">{{ total_19 }}</td>
+                            <td class="centrado">{{ total_19 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">20:00</td>
-                            <td class="centrado">{{ total_20 }}</td>
+                            <td class="centrado">{{ total_20 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">21:00</td>
-                            <td class="centrado">{{ total_21 }}</td>
+                            <td class="centrado">{{ total_21 }}%</td>
                         </tr>
                         <tr>
                             <td class="centrado">22:00</td>
-                            <td class="centrado">{{ total_22 }}</td>
+                            <td class="centrado">{{ total_22 }}%</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1073,13 +1073,8 @@
         <div class="container" name="grafic" id="grafic" style="padding-top: 55px;">
             <h1>Gráficos</h1>
             <p>En este apartado se hace un análisis gráfico de la ocupación del estacionaimento general y por zona.</p>
-
-    
-        <h2 class="my-1">Ocupación total del estacionamiento (Promedio diario por hora, %)</h2>
-        <canvas class="my-4 w-100 h-100" id="Chart_1" width="900" height="380"></canvas>
-        <h2 class="my-1">Ocupación de Zona A (Promedio diario por hora, %) </h2>
-        <canvas class="my-4 w-100" id="Chart_2" width="900" height="380"></canvas>
-        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="{% static "JustInTime/dashboard.js" %}"></script>
+            <h2 class="my-1" style="padding-bottom: 50px">Ocupación total del estacionamiento (Promedio diario por hora, %)</h2>
+            <img src=" {% static "JustInTime/grafica.png" %} " alt="Grafica" style="width: 100%; height: 100%;">
     </div>
 
 </body>

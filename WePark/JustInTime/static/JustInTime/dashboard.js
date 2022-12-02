@@ -6,57 +6,6 @@
   feather.replace({ 'aria-hidden': 'true' })
 
   // Graphs
-  const ctx = document.getElementById('Chart_1')
-  // eslint-disable-next-line no-unused-vars
-  const Chart_1 = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [
-        'Lunes',
-        'Martes',
-        'Miércoles',
-        'Jueves',
-        'Viernes',
-        'Sábado',
-        'Domingo'
-      ],
-      datasets: [{
-        data: [
-          /*24000,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034*/
-          10,
-          20,
-          30,
-          70,
-          25,
-          94,
-          66
-        ],
-        lineTension: 0,
-        backgroundColor: '#CCCCCC30',//'transparent',
-        borderColor: 'crimson',//'#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#860a23'
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      },
-      legend: {
-        display: false
-      }
-    }
-  })
 
   const ctx2 = document.getElementById('Chart_2')
   const Chart_2 = new Chart(ctx2, {
@@ -85,23 +34,23 @@
       datasets: [{
         data: [
           0,
-          10,
-          50,
-          55,
-          60,
-          70,
-          76,
+          4.44,
+          0,
+          0,
+          2.2,
+          0,
+          108.8,
+          15.5,
+          26.6,
+          0,
+          0,
+          2.2,
+          37.7,
+          0,
+          4.4,
           80,
-          79,
-          78,
-          69,
-          55,
-          40,
-          43,
-          42,
-          43,
-          20,
-          2
+          0,
+          2.2
         ],
         lineTension: 0,
         backgroundColor: '#CCCCCC30',//'transparent',

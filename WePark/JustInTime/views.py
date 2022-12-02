@@ -11,7 +11,7 @@ parks = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
 amounts = [DeviceState.objects.filter(parking_segment=park).count() for park in parks]
 amounts.append(DeviceState.objects.all().count())
 # mega_dict
-amount_historic = DeviceHistoric.objects.filter(arrive_leave=True).count()
+amount_historic = [DeviceHistoric.objects.filter(parking_segment=park).count() for park in parks]
 five = {}
 six = {}
 seven = {}
@@ -51,8 +51,8 @@ for i in range(0, 9):
     twenty[parks[i]] = round(DeviceHistoric.objects.filter(parking_segment=parks[i], hour_date__hour=20, arrive_leave=True).count() / amounts[i] * 100, 2)
     twentyone[parks[i]] = round(DeviceHistoric.objects.filter(parking_segment=parks[i], hour_date__hour=21, arrive_leave=True).count() / amounts[i] * 100, 2)
     twentytwo[parks[i]] = round(DeviceHistoric.objects.filter(parking_segment=parks[i], hour_date__hour=22, arrive_leave=True).count() / amounts[i] * 100, 2)
-    total[parks[i]] = round(DeviceHistoric.objects.filter(parking_segment=parks[i], arrive_leave=True).count() / amount_historic * 100, 2)
-
+    total[parks[i]] = round(DeviceHistoric.objects.filter(parking_segment=parks[i], arrive_leave=True).count() / amount_historic[i] * 100, 2)
+    
 for i in range(5, 23):
     total[i] = round(DeviceHistoric.objects.filter(hour_date__hour=i, arrive_leave=True).count() / amounts[-1] * 100, 2)
 
