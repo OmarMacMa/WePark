@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WePark - Estadística</title>
     {% load static %}
-    <link href="{% static 'JustInTime/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'JustInTime/nativeStyles.css' %}" rel="stylesheet">
+    <link href="{% static "JustInTime/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "JustInTime/nativeStyles.css" %}" rel="stylesheet">
+    <style>
+        table{
+            background-color: #212529;
+        }
+    </style>
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: fixed; width: 100%;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index">
-                <img src={% static "JustInTime/icon.png" %} alt="Logo" height="35" class="d-inline-block align-text-top">
-                    WePark
+              <img src="{% static "JustInTime/icon.png" %}" alt="Logo" height="35" class="d-inline-block align-text-top">
+                WePark
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,145 +35,1052 @@
                       Estadística
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="estadistic">Por zona</a></li>
-                      <li><a class="dropdown-item" href="estadistic">Por horario</a></li>
+                      <li><a class="dropdown-item" href="estadistic.html">Mapa completo</a></li>
+                      <li><a class="dropdown-item" href="#zonaA">Zona A</a></li>
+                      <li><a class="dropdown-item" href="#zonaB">Zona B</a></li>
+                      <li><a class="dropdown-item" href="#zonaC">Zona C</a></li>
+                      <li><a class="dropdown-item" href="#zonaD">Zona D</a></li>
+                      <li><a class="dropdown-item" href="#zonaE">Zona E</a></li>
+                      <li><a class="dropdown-item" href="#zonaF">Zona F</a></li>
+                      <li><a class="dropdown-item" href="#zonaG">Zona G</a></li>
+                      <li><a class="dropdown-item" href="#zonaH">Zona H</a></li>
+                      <li><a class="dropdown-item" href="#zonaI">Zona I</a></li>
+                      <li><a class="dropdown-item" href="#grafic">Gráficos</a></li>
                     </ul>
                   </div>
                 </div>
             </div>
         </div>
     </nav> <!-- Termina la barra de navegación  -------------------------- -->
-  <div class="container">
+  <div class="container" style="padding-top: 70px;">
     <br>
     <h1>Estadística</h1>
     <p>Aquí se muestran diferentes mapas según la hora y el lugar del estacionamiento</p>
     <p>En este apartado los datos se ordenan por zona. La primera, "zona cubierta", se refiere a la que están nuestros sensores</p>
+    {% comment %} <p>Las declaraciones de las dos primeras líneas son mentira jaja salu2. Ojo ahí.</p> {% endcomment %}
   
   </div>
-  <div class="container my-3">
-    <div class="row">
-        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
-            <h2>Zona Cubierta</h2>
-            <table class="table table-dark table-striped">
-                {% comment %} Color por cada fila dependiendo de el cupo {% endcomment %}
-                <thead>
-                    <tr>
-                        <th class="text-center">Hora</th>
-                        <th class="text-center">Lugares ocupados</th>
-                        <th class="text-center">Lugares libres</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="centrado">5:00</td>
-                        <td class="centrado">0</td>
-                        <td class="centrado">100</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">6:00</td>
-                        <td class="centrado">20</td>
-                        <td class="centrado">80</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">7:00</td>
-                        <td class="centrado">70</td>
-                        <td class="centrado">30</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">8:00</td>
-                        <td class="centrado">0</td>
-                        <td class="centrado">100</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">9:00</td>
-                        <td class="centrado">0</td>
-                        <td class="centrado">100</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">10:00</td>
-                        <td class="centrado">20</td>
-                        <td class="centrado">80</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">11:00</td>
-                        <td class="centrado">70</td>
-                        <td class="centrado">30</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">12:00</td>
-                        <td class="centrado">0</td>
-                        <td class="centrado">100</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">13:00</td>
-                        <td class="centrado">0</td>
-                        <td class="centrado">100</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">14:00</td>
-                        <td class="centrado">20</td>
-                        <td class="centrado">80</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">15:00</td>
-                        <td class="centrado">70</td>
-                        <td class="centrado">30</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">16:00</td>
-                        <td class="centrado">0</td>
-                        <td class="centrado">100</td>
-                    </tr> 
-                    <tr>
-                        <td class="centrado">17:00</td>
-                        <td class="centrado">0</td>
-                        <td class="centrado">100</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">18:00</td>
-                        <td class="centrado">20</td>
-                        <td class="centrado">80</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">19:00</td>
-                        <td class="centrado">70</td>
-                        <td class="centrado">30</td>
-                    </tr>
-                    <tr>
-                        <td class="centrado">20:00</td>
-                        <td class="centrado">0</td>
-                        <td class="centrado">100</td>
-                    </tr>       
-                    <tr>
-                        <td class="centrado">21:00</td>
-                        <td class="centrado">0</td>
-                        <td class="centrado">100</td>
-                    </tr> 
-                </tbody>
-            </table>
-        </div>
-        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-            <!--h2>Zona Cubierta</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Lenguaje</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Lenguaje" autofocus />
-                </div>
-                <div class="mb-3">
-                    <label for="descripcion" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="descripcion" placeholder="Descripción del lenguaje" rows="3"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="programadores" class="form-label">Número de Programadores</label>
-                    <input type="number" class="form-control" id="programadores" />
-                </div>
-                <div class="d-grid gap-2">
-                    <button class="btn btn-success">Guardar</button>
-                    <button class="btn btn-secondary">Limpiar</button>
-                </div>
-            </form-->
-        </div>
+    <div class="container my-2"> <!-- Inicio Zona Total ----------- -->
+        <h2 id="Total">Zona Total</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="centrado">Hora</th>
+                            <th class="centrado">Ocupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="centrado">5:00</td>
+                            <td class="centrado">{{ total_5 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">6:00</td>
+                            <td class="centrado">{{ total_6 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">7:00</td>
+                            <td class="centrado">{{ total_7 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">8:00</td>
+                            <td class="centrado">{{ total_8 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">9:00</td>
+                            <td class="centrado">{{ total_9 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">10:00</td>
+                            <td class="centrado">{{ total_10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">11:00</td>
+                            <td class="centrado">{{ total_11 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">12:00</td>
+                            <td class="centrado">{{ total_12 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">13:00</td>
+                            <td class="centrado">{{ total_13 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">14:00</td>
+                            <td class="centrado">{{ total_14 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">15:00</td>
+                            <td class="centrado">{{ total_15 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">16:00</td>
+                            <td class="centrado">{{ total_16 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">17:00</td>
+                            <td class="centrado">{{ total_17 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">18:00</td>
+                            <td class="centrado">{{ total_18 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">19:00</td>
+                            <td class="centrado">{{ total_19 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">20:00</td>
+                            <td class="centrado">{{ total_20 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">21:00</td>
+                            <td class="centrado">{{ total_21 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">22:00</td>
+                            <td class="centrado">{{ total_22 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+                <h2>Área total de estacionamiento</h2>
+                    <div id="map" style="height: 600px; width: 100%;"></div>
+                    <script type="text/javascript">
+                        function ifer(val){
+                        if (val >= 80){
+                            return "#FF0000";
+                        } else if (val >= 60){
+                            return "#FFA500";
+                        } else if (val >= 40){
+                            return "#FFFF00";
+                        } else if (val >= 20){
+                            return "#008000";
+                        } else {
+                            return "#000000";
+                        }
+                        }
+                        function initMap(){
+                        const myLatLng = { lat: 20.7348, lng: -103.4553 };
+                        const map = new google.maps.Map(document.getElementById("map"), {
+                            zoom: 17,
+                            center: myLatLng,
+                            disableDefaultUI: true,
+                            mapTypeId: 'satellite',
+                        });
+                        const locations = [
+                            { lat: 20.736839, lng: -103.453601 }, // A
+                            { lat: 20.735695, lng: -103.453763 },  // B
+                            { lat: 20.734593, lng: -103.453895 },  // C
+                            { lat: 20.733129, lng: -103.45408 },  // D
+                            { lat: 20.736219, lng: -103.452694 },  // E
+                            { lat: 20.73299, lng: -103.453227 },  // F
+                            { lat: 20.732396, lng: -103.455161 },  // G
+                            { lat: 20.732516, lng: -103.456663 },  // H
+                            { lat: 20.733339, lng: -103.457586 },  // I
+                        ]
+                        const segments = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+                        for (let i = 0; i < locations.length; i++){
+                            if (segments[i] == "A"){
+                            var color = ifer({{ total_A }});
+                            } else if (segments[i] == "B"){
+                            var color = ifer({{ total_B }});
+                            } else if (segments[i] == "C"){
+                            var color = ifer({{ total_C }});
+                            } else if (segments[i] == "D"){
+                            var color = ifer({{ total_D }});
+                            } else if (segments[i] == "E"){
+                            var color = ifer({{ total_E }});
+                            } else if (segments[i] == "F"){
+                            var color = ifer({{ total_F }});
+                            } else if (segments[i] == "G"){
+                            var color = ifer({{ total_G }});
+                            } else if (segments[i] == "H"){
+                            var color = ifer({{ total_H }});
+                            } else if (segments[i] == "I"){
+                            var color = ifer({{ total_I }});
+                            } else {
+                            var color = "#000000";
+                            }
+                            new google.maps.Circle({
+                            strokeColor: color,
+                            strokeOpacity: 0.99,
+                            strokeWeight: 2,
+                            fillColor: color,
+                            fillOpacity: 0.35,
+                            map,
+                            center: locations[i],
+                            radius: 50,
+
+                            });
+                            var marker = new google.maps.Marker({
+                            position: locations[i],
+                            label: segments[i],
+                            map: map,
+                            icon: {
+                                path: google.maps.SymbolPath.CIRCLE,
+                                scale: 0,
+                            },                      
+                            });
+                        }
+                        }
+                    window.initMap = initMap;
+                    </script>
+                    
+                    <script type="text/javascript"
+                        src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_MAPS_API_KEY}}&callback=initMap">
+                        defer
+                        ></script>
+                {% comment %} <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> {% endcomment %}
+            </div>
+        </div> <!-- Fin Zona Total ----------- -->
     </div>
-</div>
+
+    <div class="container my-2" name="zonaA" id="zonaA" style="padding-top: 55px;"> <!-- Inicio Zona A ----------- -->
+        <h2 id="A">Zona A</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="centrado">Hora</th>
+                            <th class="centrado">Ocupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="centrado">5:00</td>
+                            <td class="centrado">{{ five_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">6:00</td>
+                            <td class="centrado">{{ six_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">7:00</td>
+                            <td class="centrado">{{ seven_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">8:00</td>
+                            <td class="centrado">{{ eight_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">9:00</td>
+                            <td class="centrado">{{ nine_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">10:00</td>
+                            <td class="centrado">{{ ten_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">11:00</td>
+                            <td class="centrado">{{ eleven_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">12:00</td>
+                            <td class="centrado">{{ twelve_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">13:00</td>
+                            <td class="centrado">{{ thirteen_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">14:00</td>
+                            <td class="centrado">{{ fourteen_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">15:00</td>
+                            <td class="centrado">{{ fifteen_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">16:00</td>
+                            <td class="centrado">{{ sixteen_A }}%</td>
+                        </tr> 
+                        <tr>
+                            <td class="centrado">17:00</td>
+                            <td class="centrado">{{ seventeen_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">18:00</td>
+                            <td class="centrado">{{ eighteen_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">19:00</td>
+                            <td class="centrado">{{ nineteen_A }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">20:00</td>
+                            <td class="centrado">{{ twenty_A }}%</td>
+                        </tr>       
+                        <tr>
+                            <td class="centrado">21:00</td>
+                            <td class="centrado">{{ twentyone_A }}%</td>
+                        </tr> 
+                        <tr>
+                            <td class="centrado">22:00</td>
+                            <td class="centrado">{{ twentytwo_A }}%</td>
+                        </tr>                         
+                    </tbody>
+                </table>
+            </div>
+            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+                <h2>Zona A</h2>
+                {% comment %} <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> {% endcomment %}
+        </div>
+    </div> <!-- Fin Zona A ----------- -->
+
+    <div class="container my-2" name="zonaB" id="zonaB" style="padding-top: 55px;"> <!-- Inicio Zona B ----------- -->
+        <h2 id="ZonaB">Zona B</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="centrado">Hora</th>
+                            <th class="centrado">Ocupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="centrado">5:00</td>
+                            <td class="centrado">{{ five_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">6:00</td>
+                            <td class="centrado">{{ six_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">7:00</td>
+                            <td class="centrado">{{ seven_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">8:00</td>
+                            <td class="centrado">{{ eight_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">9:00</td>
+                            <td class="centrado">{{ nine_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">10:00</td>
+                            <td class="centrado">{{ ten_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">11:00</td>
+                            <td class="centrado">{{ eleven_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">12:00</td>
+                            <td class="centrado">{{ twelve_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">13:00</td>
+                            <td class="centrado">{{ thirteen_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">14:00</td>
+                            <td class="centrado">{{ fourteen_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">15:00</td>
+                            <td class="centrado">{{ fifteen_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">16:00</td>
+                            <td class="centrado">{{ sixteen_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">17:00</td>
+                            <td class="centrado">{{ seventeen_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">18:00</td>
+                            <td class="centrado">{{ eighteen_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">19:00</td>
+                            <td class="centrado">{{ nineteen_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">20:00</td>
+                            <td class="centrado">{{ twenty_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">21:00</td>
+                            <td class="centrado">{{ twentyone_B }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">22:00</td>
+                            <td class="centrado">{{ twentytwo_B }}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+                <h2>Zona B</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> {% endcomment %}
+        </div>
+    </div> <!-- Fin Zona B ----------- -->
+
+    <div class="container my-2" name="zonaC" id="zonaC" style="padding-top: 55px;"> <!-- Inicio Zona C ----------- -->
+        <h2 id="ZonaC">Zona C</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="centrado">Hora</th>
+                            <th class="centrado">Ocupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="centrado">5:00</td>
+                            <td class="centrado">{{ five_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">6:00</td>
+                            <td class="centrado">{{ six_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">7:00</td>
+                            <td class="centrado">{{ seven_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">8:00</td>
+                            <td class="centrado">{{ eight_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">9:00</td>
+                            <td class="centrado">{{ nine_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">10:00</td>
+                            <td class="centrado">{{ ten_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">11:00</td>
+                            <td class="centrado">{{ eleven_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">12:00</td>
+                            <td class="centrado">{{ twelve_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">13:00</td>
+                            <td class="centrado">{{ thirteen_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">14:00</td>
+                            <td class="centrado">{{ fourteen_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">15:00</td>
+                            <td class="centrado">{{ fifteen_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">16:00</td>
+                            <td class="centrado">{{ sixteen_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">17:00</td>
+                            <td class="centrado">{{ seventeen_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">18:00</td>
+                            <td class="centrado">{{ eighteen_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">19:00</td>
+                            <td class="centrado">{{ nineteen_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">20:00</td>
+                            <td class="centrado">{{ twenty_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">21:00</td>
+                            <td class="centrado">{{ twentyone_C }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">22:00</td>
+                            <td class="centrado">{{ twentytwo_C }}%</td>
+                        </tr>                         
+                    </tbody>
+                </table>
+            </div>
+            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+                <h2>Zona C</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> {% endcomment %}
+        </div> 
+    </div><!-- Fin Zona C ----------- -->
+
+    <div class="container my-2" name="zonaD" id="zonaD" style="padding-top: 55px;"> <!-- Inicio Zona D ----------- -->
+        <h2 id="ZonaD">Zona D</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="centrado">Hora</th>
+                            <th class="centrado">Ocupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="centrado">5:00</td>
+                            <td class="centrado">{{ five_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">6:00</td>
+                            <td class="centrado">{{ six_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">7:00</td>
+                            <td class="centrado">{{ seven_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">8:00</td>
+                            <td class="centrado">{{ eight_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">9:00</td>
+                            <td class="centrado">{{ nine_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">10:00</td>
+                            <td class="centrado">{{ ten_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">11:00</td>
+                            <td class="centrado">{{ eleven_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">12:00</td>
+                            <td class="centrado">{{ twelve_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">13:00</td>
+                            <td class="centrado">{{ thirteen_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">14:00</td>
+                            <td class="centrado">{{ fourteen_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">15:00</td>
+                            <td class="centrado">{{ fifteen_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">16:00</td>
+                            <td class="centrado">{{ sixteen_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">17:00</td>
+                            <td class="centrado">{{ seventeen_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">18:00</td>
+                            <td class="centrado">{{ eighteen_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">19:00</td>
+                            <td class="centrado">{{ nineteen_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">20:00</td>
+                            <td class="centrado">{{ twenty_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">21:00</td>
+                            <td class="centrado">{{ twentyone_D }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">22:00</td>
+                            <td class="centrado">{{ twentytwo_D }}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+                <h2>Zona D</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> {% endcomment %}
+        </div> 
+    </div><!-- Fin Zona D ----------- -->
+                    
+    <div class="container my-2" name="zonaE" id="zonaE" style="padding-top: 55px;"> <!-- Inicio Zona E ----------- -->
+        <h2 id="ZonaE">Zona E</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="centrado">Hora</th>
+                            <th class="centrado">Ocupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="centrado">5:00</td>
+                            <td class="centrado">{{ five_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">6:00</td>
+                            <td class="centrado">{{ six_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">7:00</td>
+                            <td class="centrado">{{ seven_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">8:00</td>
+                            <td class="centrado">{{ eight_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">9:00</td>
+                            <td class="centrado">{{ nine_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">10:00</td>
+                            <td class="centrado">{{ ten_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">11:00</td>
+                            <td class="centrado">{{ eleven_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">12:00</td>
+                            <td class="centrado">{{ twelve_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">13:00</td>
+                            <td class="centrado">{{ thirteen_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">14:00</td>
+                            <td class="centrado">{{ fourteen_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">15:00</td>
+                            <td class="centrado">{{ fifteen_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">16:00</td>
+                            <td class="centrado">{{ sixteen_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">17:00</td>
+                            <td class="centrado">{{ seventeen_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">18:00</td>
+                            <td class="centrado">{{ eighteen_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">19:00</td>
+                            <td class="centrado">{{ nineteen_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">20:00</td>
+                            <td class="centrado">{{ twenty_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">21:00</td>
+                            <td class="centrado">{{ twentyone_E }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">22:00</td>
+                            <td class="centrado">{{ twentytwo_E }}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+                <h2>Zona E</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> {% endcomment %}
+        </div> 
+    </div><!-- Fin Zona E ----------- -->                    
+
+    <div class="container my-2" name="zonaF" id="zonaF" style="padding-top: 55px;"> <!-- Inicio Zona F ----------- -->
+        <h2 id="ZonaF">Zona F</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="centrado">Hora</th>
+                            <th class="centrado">Ocupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="centrado">5:00</td>
+                            <td class="centrado">{{ five_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">6:00</td>
+                            <td class="centrado">{{ six_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">7:00</td>
+                            <td class="centrado">{{ seven_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">8:00</td>
+                            <td class="centrado">{{ eight_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">9:00</td>
+                            <td class="centrado">{{ nine_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">10:00</td>
+                            <td class="centrado">{{ ten_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">11:00</td>
+                            <td class="centrado">{{ eleven_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">12:00</td>
+                            <td class="centrado">{{ twelve_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">13:00</td>
+                            <td class="centrado">{{ thirteen_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">14:00</td>
+                            <td class="centrado">{{ fourteen_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">15:00</td>
+                            <td class="centrado">{{ fifteen_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">16:00</td>
+                            <td class="centrado">{{ sixteen_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">17:00</td>
+                            <td class="centrado">{{ seventeen_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">18:00</td>
+                            <td class="centrado">{{ eighteen_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">19:00</td>
+                            <td class="centrado">{{ nineteen_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">20:00</td>
+                            <td class="centrado">{{ twenty_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">21:00</td>
+                            <td class="centrado">{{ twentyone_F }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">22:00</td>
+                            <td class="centrado">{{ twentytwo_F }}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+                <h2>Zona F</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> {% endcomment %}
+        </div> 
+    </div><!-- Fin Zona F ----------- -->
+
+    <div class="container my-2" name="zonaG" id="zonaG" style="padding-top: 55px;"> <!-- Inicio Zona G ----------- -->
+        <h2 id="ZonaG">Zona G</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="centrado">Hora</th>
+                            <th class="centrado">Ocupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="centrado">5:00</td>
+                            <td class="centrado">{{ five_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">6:00</td>
+                            <td class="centrado">{{ six_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">7:00</td>
+                            <td class="centrado">{{ seven_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">8:00</td>
+                            <td class="centrado">{{ eight_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">9:00</td>
+                            <td class="centrado">{{ nine_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">10:00</td>
+                            <td class="centrado">{{ ten_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">11:00</td>
+                            <td class="centrado">{{ eleven_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">12:00</td>
+                            <td class="centrado">{{ twelve_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">13:00</td>
+                            <td class="centrado">{{ thirteen_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">14:00</td>
+                            <td class="centrado">{{ fourteen_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">15:00</td>
+                            <td class="centrado">{{ fifteen_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">16:00</td>
+                            <td class="centrado">{{ sixteen_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">17:00</td>
+                            <td class="centrado">{{ seventeen_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">18:00</td>
+                            <td class="centrado">{{ eighteen_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">19:00</td>
+                            <td class="centrado">{{ nineteen_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">20:00</td>
+                            <td class="centrado">{{ twenty_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">21:00</td>
+                            <td class="centrado">{{ twentyone_G }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">22:00</td>
+                            <td class="centrado">{{ twentytwo_G }}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+                <h2>Zona G</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> {% endcomment %}
+        </div> 
+    </div><!-- Fin Zona G ----------- -->
+
+    <div class="container my-2" name="zonaH" id="zonaH" style="padding-top: 55px;"> <!-- Inicio Zona H ----------- -->
+        <h2 id="ZonaH">Zona H</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="centrado">Hora</th>
+                            <th class="centrado">Ocupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="centrado">5:00</td>
+                            <td class="centrado">{{ five_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">6:00</td>
+                            <td class="centrado">{{ six_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">7:00</td>
+                            <td class="centrado">{{ seven_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">8:00</td>
+                            <td class="centrado">{{ eight_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">9:00</td>
+                            <td class="centrado">{{ nine_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">10:00</td>
+                            <td class="centrado">{{ ten_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">11:00</td>
+                            <td class="centrado">{{ eleven_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">12:00</td>
+                            <td class="centrado">{{ twelve_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">13:00</td>
+                            <td class="centrado">{{ thirteen_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">14:00</td>
+                            <td class="centrado">{{ fourteen_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">15:00</td>
+                            <td class="centrado">{{ fifteen_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">16:00</td>
+                            <td class="centrado">{{ sixteen_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">17:00</td>
+                            <td class="centrado">{{ seventeen_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">18:00</td>
+                            <td class="centrado">{{ eighteen_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">19:00</td>
+                            <td class="centrado">{{ nineteen_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">20:00</td>
+                            <td class="centrado">{{ twenty_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">21:00</td>
+                            <td class="centrado">{{ twentyone_H }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">22:00</td>
+                            <td class="centrado">{{ twentytwo_H }}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+                <h2>Zona H</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> {% endcomment %}
+        </div> 
+    </div><!-- Fin Zona H ----------- -->
+
+    <div class="container my-2" name="zonaI" id="zonaI" style="padding-top: 55px;"> <!-- Inicio Zona I ----------- -->
+        <h2 id="ZonaI">Zona I</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 py-3 bg-white">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="centrado">Hora</th>
+                            <th class="centrado">Ocupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="centrado">5:00</td>
+                            <td class="centrado">{{ five_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">6:00</td>
+                            <td class="centrado">{{ six_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">7:00</td>
+                            <td class="centrado">{{ seven_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">8:00</td>
+                            <td class="centrado">{{ eight_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">9:00</td>
+                            <td class="centrado">{{ nine_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">10:00</td>
+                            <td class="centrado">{{ ten_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">11:00</td>
+                            <td class="centrado">{{ eleven_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">12:00</td>
+                            <td class="centrado">{{ twelve_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">13:00</td>
+                            <td class="centrado">{{ thirteen_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">14:00</td>
+                            <td class="centrado">{{ fourteen_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">15:00</td>
+                            <td class="centrado">{{ fifteen_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">16:00</td>
+                            <td class="centrado">{{ sixteen_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">17:00</td>
+                            <td class="centrado">{{ seventeen_I }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="centrado">18:00</td>
+                            <td class="centrado">{{ eighteen_I }}%</td>
+                    </tbody>
+                </table>
+            </div>
+            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
+                <h2>Zona I</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> {% endcomment %}
+        </div> 
+    </div><!-- Fin Zona I ----------- -->        
+
+        <!-- Sección de gráaficas  ----------- -->
+        <div class="container" name="grafic" id="grafic" style="padding-top: 55px;">
+            <h1>Gráficos</h1>
+            <p>En este apartado se hace un análisis gráfico de la ocupación del estacionaimento general y por zona.</p>
+
+    
+        <h2 class="my-1">Ocupación total del estacionamiento (Promedio diario por hora, %)</h2>
+        <canvas class="my-4 w-100 h-100" id="Chart_1" width="900" height="380"></canvas>
+        <h2 class="my-1">Ocupación de Zona A (Promedio diario por hora, %) </h2>
+        <canvas class="my-4 w-100" id="Chart_2" width="900" height="380"></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="{% static "JustInTime/dashboard.js" %}"></script>
+    </div>
+
 </body>
 </html>
