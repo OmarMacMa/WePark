@@ -25,7 +25,7 @@ SECRET_KEY = keys.SECRET_KEY
 GOOGLE_MAPS_API_KEY = keys.GOOGLE_MAPS_API_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["wepark.azurewebsites.net", "localhost", "127.0.0.1", "ec2-54-167-62-67.compute-1.amazonaws.com", "wepark.azurewebsites.net:8000"]
 
@@ -50,7 +50,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'WePark.urls'
@@ -89,10 +88,6 @@ DATABASES = {
             "sslmode": "require",
         },
     }
-    # 'default': { # Connected to a SQL Server database in Google Cloud
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
 }
 
 
@@ -131,8 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
