@@ -35,7 +35,7 @@
                       Estadística
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="estadistic.html">Mapa completo</a></li>
+                      <li><a class="dropdown-item" href="estadistic">Mapa completo</a></li>
                       <li><a class="dropdown-item" href="#zonaA">Zona A</a></li>
                       <li><a class="dropdown-item" href="#zonaB">Zona B</a></li>
                       <li><a class="dropdown-item" href="#zonaC">Zona C</a></li>
@@ -185,24 +185,34 @@
                         ]
                         const segments = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
                         for (let i = 0; i < locations.length; i++){
+                            var temp = 0;
                             if (segments[i] == "A"){
-                            var color = ifer({{ total_A }});
+                                temp = {{ total_A }};
+                                var color = ifer({{ total_A }});
                             } else if (segments[i] == "B"){
-                            var color = ifer({{ total_B }});
+                                temp = {{ total_B }};
+                                var color = ifer({{ total_B }});
                             } else if (segments[i] == "C"){
-                            var color = ifer({{ total_C }});
+                                temp = {{ total_C }};
+                                var color = ifer({{ total_C }});
                             } else if (segments[i] == "D"){
-                            var color = ifer({{ total_D }});
+                                temp = {{ total_D }};
+                                var color = ifer({{ total_D }});
                             } else if (segments[i] == "E"){
-                            var color = ifer({{ total_E }});
+                                temp = {{ total_E }};
+                                var color = ifer({{ total_E }});
                             } else if (segments[i] == "F"){
-                            var color = ifer({{ total_F }});
+                                temp = {{ total_F }};
+                                var color = ifer({{ total_F }});
                             } else if (segments[i] == "G"){
-                            var color = ifer({{ total_G }});
+                                temp = {{ total_G }};
+                                var color = ifer({{ total_G }});
                             } else if (segments[i] == "H"){
-                            var color = ifer({{ total_H }});
+                                temp = {{ total_H }};
+                                var color = ifer({{ total_H }});
                             } else if (segments[i] == "I"){
-                            var color = ifer({{ total_I }});
+                                temp = {{ total_I }};
+                                var color = ifer({{ total_I }});
                             } else {
                             var color = "#000000";
                             }
@@ -219,7 +229,7 @@
                             });
                             var marker = new google.maps.Marker({
                             position: locations[i],
-                            label: segments[i],
+                            label: segments[i] + ": " + temp + "%",
                             map: map,
                             icon: {
                                 path: google.maps.SymbolPath.CIRCLE,
@@ -235,7 +245,6 @@
                         src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_MAPS_API_KEY}}&callback=initMap">
                         defer
                         ></script>
-                {% comment %} <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> {% endcomment %}
             </div>
         </div> <!-- Fin Zona Total ----------- -->
     </div>
@@ -327,10 +336,6 @@
                     </tbody>
                 </table>
             </div>
-            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-                <h2>Zona A</h2>
-                {% comment %} <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div> {% endcomment %}
         </div>
     </div> <!-- Fin Zona A ----------- -->
 
@@ -421,10 +426,6 @@
                     </tbody>
                 </table>
             </div>
-            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-                <h2>Zona B</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div> {% endcomment %}
         </div>
     </div> <!-- Fin Zona B ----------- -->
 
@@ -515,10 +516,6 @@
                     </tbody>
                 </table>
             </div>
-            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-                <h2>Zona C</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div> {% endcomment %}
         </div> 
     </div><!-- Fin Zona C ----------- -->
 
@@ -609,10 +606,6 @@
                     </tbody>
                 </table>
             </div>
-            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-                <h2>Zona D</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div> {% endcomment %}
         </div> 
     </div><!-- Fin Zona D ----------- -->
                     
@@ -703,10 +696,6 @@
                     </tbody>
                 </table>
             </div>
-            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-                <h2>Zona E</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div> {% endcomment %}
         </div> 
     </div><!-- Fin Zona E ----------- -->                    
 
@@ -797,10 +786,6 @@
                     </tbody>
                 </table>
             </div>
-            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-                <h2>Zona F</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div> {% endcomment %}
         </div> 
     </div><!-- Fin Zona F ----------- -->
 
@@ -891,10 +876,6 @@
                     </tbody>
                 </table>
             </div>
-            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-                <h2>Zona G</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div> {% endcomment %}
         </div> 
     </div><!-- Fin Zona G ----------- -->
 
@@ -985,10 +966,6 @@
                     </tbody>
                 </table>
             </div>
-            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-                <h2>Zona H</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div> {% endcomment %}
         </div> 
     </div><!-- Fin Zona H ----------- -->
 
@@ -1062,10 +1039,6 @@
                     </tbody>
                 </table>
             </div>
-            {% comment %} <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 py-4 bg-white">
-                <h2>Zona I</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.367944775085!2d-103.45896273508619!3d20.735875586157764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a8b3d2fb668b%3A0xcbc04f49644a4708!2sCancha%20de%20Futbol%20ITESM%20Guadalajara%2C%20Avenida%20General%20Ram%C3%B3n%20Corona%2C%2045201%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1668201714276!5m2!1ses-419!2smx" style="width: 100%; height: 93%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div> {% endcomment %}
         </div> 
     </div><!-- Fin Zona I ----------- -->        
 
