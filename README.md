@@ -5,8 +5,13 @@ WePark is an Internet of Things project developed by a team of students at the T
 Our website features two pages: one displaying the current occupancy of the parking lot in real time, and another that provides historical statistics on the occupancy of the parking lot by hour and segment. This allows you to see not only where the available spots are at the moment, but also how the occupancy has changed over time and which segments tend to be the busiest.
 
 Here is the main page:
+![index](./README_imgs/index.png)
 
 Here is the stadictics page:
+![stadistics](./README_imgs/stadistics_1.png)
+![stadistics2](./README_imgs/stadistics_2.png)
+![stadistics3](./README_imgs/stadistics_3.png)
+
 
 This web page was developed in Python 3.8 using the Django web framework. The required modules can be found in the `requirements.txt` file.
 
